@@ -19,5 +19,5 @@ const TETROMINO_L = [ [ 0, 0, 5 ], [ 5, 5, 5] ];
 const TETROMINO_S = [ [ 0, 6, 6 ], [ 6, 6, 0] ];
 const TETROMINO_Z = [ [ 7, 7, 0 ], [ 0, 7, 7] ];
 
-const COLORS = [ "none", "lightblue", "yellow", "purple", "blue", "orange", "green", "red" ]
+const COLORS = [ "none", "lightblue", "yellow", "purple", "blue", "orange", "green", "red", "mono" ]
 const TETROMINOS = [undefined, TETROMINO_I, TETROMINO_O, TETROMINO_T, TETROMINO_J, TETROMINO_L, TETROMINO_S, TETROMINO_Z];

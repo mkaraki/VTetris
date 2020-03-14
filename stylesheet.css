@@ -11,7 +11,7 @@
     height: 31px
 }
 
-.board-cells {
+.board-cell {
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -19,13 +19,17 @@
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
+
+    /* border: 1px solid black; */
 }
 
-.board-cell-color-none { background-color: #666666 !important; }
-.board-cell-color-lightblue { background-color: lightblue !important; }
-.board-cell-color-yellow { background-color: yellow !important; }
-.board-cell-color-purple { background-color: purple !important; }
-.board-cell-color-blue { background-color: blue !important; }
-.board-cell-color-orange { background-color: orange !important; }
-.board-cell-color-green { background-color: green !important; }
-.board-cell-color-red { background-color: red !important; }
+.board-cell-color-none { background-color: #777777; }
+.board-cell-color-lightblue { background-color: lightblue; }
+.board-cell-color-yellow { background-color: yellow; }
+.board-cell-color-purple { background-color: purple; }
+.board-cell-color-blue { background-color: blue; }
+.board-cell-color-orange { background-color: orange; }
+.board-cell-color-green { background-color: green; }
+.board-cell-color-red { background-color: red; }
+
+.board-cell-color-mono { background-color: #333333; }

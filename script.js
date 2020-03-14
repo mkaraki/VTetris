@@ -1,6 +1,6 @@
 function setColor(cell, colorid)
 {
-    cell.setAttribute("class", "board-cells board-cell-color-" + COLORS[colorid]);
+    cell.setAttribute("class", "board-cell board-cell-color-" + COLORS[colorid]);
 }
 
 function getColor(cell)
@@ -8,7 +8,7 @@ function getColor(cell)
     var toret = 0;
     var classes = cell.getAttribute("class").split(' ');
     classes.forEach(v => {
-        if (v == "board-cells") return;
+        if (v == "board-cell") return;
         switch (v)
         {
             case "board-cell-color-none": toret = 0; break;
@@ -27,7 +27,7 @@ function getColor(cell)
 function cell(x, y)
 {
     var line = document.getElementsByClassName("board-line")[y];
-    var cell = line.getElementsByClassName("board-cells")[x];
+    var cell = line.getElementsByClassName("board-cell")[x];
     return cell;
 }
 
@@ -80,7 +80,7 @@ function createLine()
     for (var x = 0; x < WIDTH; x++)
     {
         var cell = document.createElement("div");
-        cell.setAttribute("class","board-cells board-cell-color-none");
+        cell.setAttribute("class","board-cell board-cell-color-none");
         line.appendChild(cell);
     }
     return line;
@@ -409,5 +409,7 @@ function getNext()
 {
     var rnd = Math.floor(Math.random() * (TETROMINOS.length - 1)) + 1;
 
-    return TETROMINOS[rnd];
+    var pat = TETROMINOS[rnd];
+
+    return pat;
 }
