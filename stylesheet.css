@@ -1,6 +1,14 @@
+#board {
+    border: 2px solid black;
+    padding: 2px;
+    height: 620px;
+    width: 311px;
+}
+
 .board-line {
     margin: 0;
     padding: 0;
+    height: 31px
 }
 
 .board-cells {

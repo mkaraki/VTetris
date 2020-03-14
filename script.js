@@ -109,7 +109,7 @@ document.onkeydown = function(event) {
     if (event.isComposing) return;
 
     if (event.keyCode == KEY_DOWN)
-        goDown();
+        goDownB();
     else if (event.keyCode == KEY_LEFT)
         goLeft();
     else if (event.keyCode == KEY_RIGHT)
@@ -119,10 +119,10 @@ document.onkeydown = function(event) {
     else if (event.keyCode == KEY_SPACE)
         goMostDown();
     else if (event.keyCode == KEY_ENTER)
-        decideBlock();
+        goMostDown();   
 };
 
-// var downTimer = null;
+var downTimer = null;
 
 var blockPositionX;
 var blockPositionY;
@@ -132,14 +132,27 @@ var block;
 
 function goMostDown()
 {
+    resetTimer();
+
     var res;
     do {
         res = goDown();
     } while(res);
+    decideBlock();
+}
+
+function goDownB()
+{
+    resetTimer();
+
+    if (!goDown())
+        decideBlock();
 }
 
 function goDown()
 {
+    resetTimer();
+    
     if (blockPositionY + block.length + 1 > HEIGHT)
         return false;
     
@@ -173,6 +186,8 @@ function goDown()
 
 function goLeft()
 {
+    resetTimer();
+    
     if (blockPositionX < 1)
         return;
     
@@ -205,6 +220,8 @@ function goLeft()
 
 function goRight()
 {
+    resetTimer();
+    
     if (blockPositionX + block[0].length > WIDTH)
         return;
 
@@ -237,12 +254,16 @@ function goRight()
 
 function decideBlock()
 {
+    modTimer(false);
+    
     checkEraseLine();
     goNext();
 }
 
 function rotateBlockB()
 {
+    resetTimer();
+
     var toclean = [];
 
     for (var y = 0; y < block.length; y++)
@@ -263,10 +284,33 @@ function rotateBlockB()
 
 function goNext()
 {
+    resetTimer();
+
     blockPositionX = 3;
     blockPositionY = 0;
     block = getNext();
     applyDisplay();
+}
+
+function resetTimer()
+{
+    modTimer(false);
+    modTimer(true);
+}
+
+function modTimer(enable)
+{
+    if (enable)
+    {
+        if (downTimer != null) clearInterval(downTimer);
+        downTimer = setInterval(goDownB, 1000);
+    }
+    else
+    {
+        if (downTimer == null) return;
+        clearInterval(downTimer);
+        downTimer = null;
+    }
 }
 
 function getBlockAbsoluteX(x)
