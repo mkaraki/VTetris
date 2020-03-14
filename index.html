@@ -11,7 +11,22 @@
             <!-- 20x10 -->
             <!-- Top Left is 0,0 -->
         </div>
+        <div id="boardinfo">
+            <div id="dbginfo" class="hide">
+                <table>
+                    <thead>
+                        <tr><th>Title</th><th>Value</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>var:block</td><td id="dbg-v-block"></td></tr>
+                        <tr><td>var:blockPositionX</td><td id="dbg-v-blockposx"></td></tr>
+                        <tr><td>var:blockPositionY</td><td id="dbg-v-blockposy"></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <div id="controlbox">
+            <button onclick="showDebug();">Show Debug</button>
             <!-- <input type="checkbox" id="opt-mono" />
             <label for="opt-mono">Use mono theme</label> -->
         </div>

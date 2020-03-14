@@ -413,3 +413,21 @@ function getNext()
 
     return pat;
 }
+
+function setDOMTextById(id, text)
+{
+    document.getElementById(id).innerText = text;
+}
+
+function updateDebug()
+{
+    setDOMTextById('dbg-v-block', block);
+    setDOMTextById('dbg-v-blockposx', blockPositionX);
+    setDOMTextById('dbg-v-blockposy', blockPositionY);
+}
+
+function showDebug()
+{
+    document.getElementById("dbginfo").setAttribute("class", "");
+    setInterval(updateDebug, 10);
+}
