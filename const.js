@@ -6,7 +6,8 @@ const KEY_DOWN = 40;
 const KEY_LEFT = 37
 const KEY_RIGHT = 39;
 
-const KEY_CTRL = 17;
+const KEY_CTRL = 17; // for Rotate Right
+const KEY_SHIFT = 16; // for Rotate Left
 const KEY_ENTER = 13;
 const KEY_SPACE = 32;
 

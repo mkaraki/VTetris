@@ -115,7 +115,9 @@ document.onkeydown = function(event) {
     else if (event.keyCode == KEY_RIGHT)
         goRight();
     else if (event.keyCode == KEY_CTRL)
-        rotateBlockB(); 
+        rotateBlockCB();
+    else if (event.keyCode == KEY_SHIFT)
+        rotateBlockCCB();
     else if (event.keyCode == KEY_SPACE)
         goMostDown();
     else if (event.keyCode == KEY_ENTER)
@@ -260,7 +262,7 @@ function decideBlock()
     goNext();
 }
 
-function rotateBlockB()
+function rotateBlockCB()
 {
     resetTimer();
 
@@ -279,6 +281,28 @@ function rotateBlockB()
     cleanCellsPos(toclean);
 
     block = rotateBlock(block, 1);
+    applyDisplay();
+}
+
+function rotateBlockCCB()
+{
+    resetTimer();
+
+    var toclean = [];
+
+    for (var y = 0; y < block.length; y++)
+    {
+        for (var x = 0; x < block[y].length; x++)
+        {
+            if (block[y][x] == 0)
+                continue;
+            toclean.push([getBlockAbsoluteX(x), getBlockAbsoluteY(y)]);
+        }
+    }
+
+    cleanCellsPos(toclean);
+
+    block = rotateBlock(block, -1);
     applyDisplay();
 }
 
