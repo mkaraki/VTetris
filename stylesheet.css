@@ -1,0 +1,23 @@
+.board-line {
+    margin: 0;
+    padding: 0;
+}
+
+.board-cells {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0.5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.board-cell-color-none { background-color: #666666 !important; }
+.board-cell-color-lightblue { background-color: lightblue !important; }
+.board-cell-color-yellow { background-color: yellow !important; }
+.board-cell-color-purple { background-color: purple !important; }
+.board-cell-color-blue { background-color: blue !important; }
+.board-cell-color-orange { background-color: orange !important; }
+.board-cell-color-green { background-color: green !important; }
+.board-cell-color-red { background-color: red !important; }
