@@ -36,6 +36,17 @@ function line(line)
     return document.getElementsByClassName("board-line")[line];
 }
 
+function checkGameOver()
+{
+    for (var x = 0; x < 10; x++)
+    {
+        if(getColor(cell(x, 0)) != 0){
+            return true;
+        }
+    }
+    return false;
+}
+
 // Check line erasable and erase
 function checkEraseLine()
 {
@@ -93,6 +104,8 @@ window.onload = function() {
     {
         board.appendChild(createLine());
     }
+
+    line(0).setAttribute("class", "board-line hide");
 
     goNext();
 }
@@ -259,6 +272,11 @@ function decideBlock()
     modTimer(false);
     
     checkEraseLine();
+    if (checkGameOver())
+    {
+        document.getElementById("explain-container").innerText = "GameOver  ";
+        return;
+    }
     goNext();
 }
 
@@ -419,11 +437,26 @@ function setDOMTextById(id, text)
     document.getElementById(id).innerText = text;
 }
 
+function getBlockString(block)
+{
+    var toret = "[\n";
+    block.forEach(y => {
+        toret += '[';
+        y.forEach(x => {
+            toret += x + ',';
+        });
+        toret += '],\n';
+    });
+    toret += ']'
+    return toret;
+}
+
 function updateDebug()
 {
-    setDOMTextById('dbg-v-block', block);
+    setDOMTextById('dbg-v-block', getBlockString(block));
     setDOMTextById('dbg-v-blockposx', blockPositionX);
     setDOMTextById('dbg-v-blockposy', blockPositionY);
+    setDOMTextById('dbg-v-downtimer', downTimer);
 }
 
 function showDebug()

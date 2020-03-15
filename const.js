@@ -1,5 +1,5 @@
 const WIDTH = 10;
-const HEIGHT = 20;
+const HEIGHT = 21;
 
 const KEY_UP = 38;
 const KEY_DOWN = 40;
