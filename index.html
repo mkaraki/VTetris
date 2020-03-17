@@ -1,42 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>VTetris</title>
-        <link rel="stylesheet" href="stylesheet.css" />
-        <script src="const.js"></script>
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <div id="board">
-            <!-- 20x10 -->
-            <!-- Top Left is 0,0 -->
+
+<head>
+    <title>VTetris</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145365019-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145365019-1');
+    </script>
+
+
+    <link rel="stylesheet" href="stylesheet.css" />
+    <script src="const.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="board">
+        <!-- 20x10 -->
+        <!-- Top Left is 0,0 -->
+    </div>
+    <div id="boardinfo">
+        <div id="dbginfo" class="hide">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>var:block</td>
+                        <td id="dbg-v-block"></td>
+                    </tr>
+                    <tr>
+                        <td>var:blockPositionX</td>
+                        <td id="dbg-v-blockposx"></td>
+                    </tr>
+                    <tr>
+                        <td>var:blockPositionY</td>
+                        <td id="dbg-v-blockposy"></td>
+                    </tr>
+                    <tr>
+                        <td>var:downTimer</td>
+                        <td id="dbg-v-downtimer"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div id="boardinfo">
-            <div id="dbginfo" class="hide">
-                <table>
-                    <thead>
-                        <tr><th>Title</th><th>Value</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>var:block</td><td id="dbg-v-block"></td></tr>
-                        <tr><td>var:blockPositionX</td><td id="dbg-v-blockposx"></td></tr>
-                        <tr><td>var:blockPositionY</td><td id="dbg-v-blockposy"></td></tr>
-                        <tr><td>var:downTimer</td><td id="dbg-v-downtimer"></td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div id="controlbox">
-            <button onclick="showDebug();">Show Debug</button>
-            <!-- <input type="checkbox" id="opt-mono" />
+    </div>
+    <div id="controlbox">
+        <button onclick="showDebug();">Show Debug</button>
+        <!-- <input type="checkbox" id="opt-mono" />
             <label for="opt-mono">Use mono theme</label> -->
-        </div>
-        <div id="explain-container">
-            Left/Right Arrow to move block.<br />
-            Down Arrow to down 1 row.<br />
-            Ctrl to Clockwise Rotate.<br />
-            Shift to Counter Clockwise Rotate.<br />
-            Space to put down.<br />
-        </div>
-    </body>
+    </div>
+    <div id="explain-container">
+        Left/Right Arrow to move block.<br />
+        Down Arrow to down 1 row.<br />
+        Ctrl to Clockwise Rotate.<br />
+        Shift to Counter Clockwise Rotate.<br />
+        Space to put down.<br />
+    </div>
+</body>
+
 </html>
